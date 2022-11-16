@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "big.js": "^6.2.1",
     "d3-dsv": "^3.0.1"
