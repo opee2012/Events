@@ -1,3 +1,10 @@
+/*
+    CSCI 390, Events, Jacob Borth, 19 November 2022
+    Displays Amazon review average helpful votes and average unhelpful votes from a large, remote tsv file.
+    I did receive help from Ross Friend for this project.
+*/
+
+
 // Creating the "require" function
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
@@ -12,7 +19,7 @@ let helpfulVoteCount = new Large(0);
 let totalVoteCount = new Large(0);
 let lineCt = new Large(0);
 
-const inputFile = "amazon_reviews_us_Mobile_Apps_v1_00.tsv";
+const inputFile = "/home/acc.besmera2/amazon_reviews_us_Mobile_Apps_v1_00.tsv";
 
 let fileLineReader = require("readline").createInterface({
     input: require('fs').createReadStream(inputFile)
@@ -36,7 +43,3 @@ fileLineReader.on("close", function () {
     console.log("Average helpful votes: ", avgHelpful.toString());
     console.log("Average unhelpful votes: ", avgUnhelpful.toString());
 });
-//OUTPUT:
-
-//total number of helpful votes divided by total number of reviews
-//total number of unhelpful votes divided by total number of reviews
